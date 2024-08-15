@@ -3,9 +3,11 @@ FROM golang:alpine3.20 AS builder
 WORKDIR /app/telegram_bot
 
 RUN apk add --no-cache make && \
-    mkdir -p /app/telegram_bot && \
-    COPY telegram_bot/ . && \
-    go mod download && \
+    mkdir -p /app/telegram_bot
+
+COPY telegram_bot/ .
+
+RUN    go mod download && \
     make build
 
 FROM alpine:3.20
