@@ -1,0 +1,10 @@
+.git
+.gitignore
+.idea
+*.iml
+.dockerignore
+.DS_Store
+
+data
+logs
+telegram_bot
